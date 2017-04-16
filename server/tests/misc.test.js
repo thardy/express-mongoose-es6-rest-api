@@ -1,7 +1,8 @@
-import request from 'supertest-as-promised';
-import httpStatus from 'http-status';
-import chai, { expect } from 'chai';
-import app from '../../index';
+const request = require('supertest-as-promised');
+const httpStatus = require('http-status');
+const chai = require('chai');
+const app = require('../../server');
+const expect = chai.expect;
 
 chai.config.includeStack = true;
 

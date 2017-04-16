@@ -1,9 +1,10 @@
-import request from 'supertest-as-promised';
-import httpStatus from 'http-status';
-import jwt from 'jsonwebtoken';
-import chai, { expect } from 'chai';
-import app from '../../index';
-import config from '../../config/config';
+const request = require('supertest-as-promised');
+const httpStatus = require('http-status');
+const jwt = require('jsonwebtoken');
+const chai = require('chai');
+const app = require('../../server');
+const config = require('../../config/config');
+const expect = chai.expect;
 
 chai.config.includeStack = true;
 

@@ -118,7 +118,7 @@ gulp
 3. yarn --production
 
 # Use any process manager to start your services
-4. pm2 start dist/index.js
+4. pm2 start dist/server.js
 ```
 
 In production you need to make sure your server is always up so you should ideally use any of the process manager recommended [here](http://expressjs.com/en/advanced/pm.html).
