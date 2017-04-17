@@ -49,22 +49,17 @@ const envVarsSchema = Joi.object({
     .required();
 
 let config = {};
-if (process.env.NODE_ENV === 'production') {
-    config = {
-        env: envVars.NODE_ENV,
-        port: envVars.PORT,
-        mongooseDebug: envVars.MONGOOSE_DEBUG,
-        jwtSecret: envVars.JWT_SECRET,
-        mongo: {
-            host: envVars.MONGO_HOST,
-            port: envVars.MONGO_PORT
-        }
-    };
-}
-else {
-    // Offer development variables
-    config = require('./development.json');
-}
+config = {
+    env: process.env.NODE_ENV,
+    port: process.env.PORT,
+    mongooseDebug: process.env.MONGOOSE_DEBUG,
+    jwtSecret: process.env.JWT_SECRET,
+    mongo: {
+        host: process.env.MONGO_HOST,
+        port: process.env.MONGO_PORT
+    }
+};
+
 
 const { error, value: envVars } = Joi.validate(config, envVarsSchema);
 if (error) {
